@@ -1,5 +1,7 @@
 # better-auth-eve-online
 
+[![NPM Version](https://img.shields.io/npm/v/%40localisprimary%2Fbetter-auth-eve-online?style=flat)](https://www.npmjs.com/package/@localisprimary/better-auth-eve-online)
+
 A small, secure [EVE Online SSO](https://developers.eveonline.com/docs/services/sso/) provider helper for [Better Auth](https://better-auth.com/). It is built for Better Auth's Generic OAuth plugin and has zero runtime dependencies.
 
 The provider:
