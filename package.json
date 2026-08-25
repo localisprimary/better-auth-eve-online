@@ -1,6 +1,6 @@
 {
   "name": "@localisprimary/better-auth-eve-online",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A secure EVE Online SSO provider for Better Auth",
   "type": "module",
   "sideEffects": false,
