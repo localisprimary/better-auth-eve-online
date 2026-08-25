@@ -1,9 +1,23 @@
 {
   "name": "@localisprimary/better-auth-eve-online",
   "version": "0.1.1",
+  "type": "module",
   "description": "A secure EVE Online SSO provider for Better Auth",
   "author": "Adam Trager <hello@adamtrager.com>",
-  "type": "module",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/localisprimary/esi.git"
+    },
+    "keywords": [
+      "better-auth",
+      "eve-online",
+      "eve online",
+      "auth",
+      "oauth",
+      "oauth2",
+      "sso"
+    ],
+  "license": "ISC",
   "sideEffects": false,
   "files": [
     "dist",
@@ -29,16 +43,6 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": [
-    "better-auth",
-    "eve-online",
-    "eve online",
-    "auth",
-    "oauth",
-    "oauth2",
-    "sso"
-  ],
-  "license": "ISC",
   "engines": {
     "node": ">=20"
   },
