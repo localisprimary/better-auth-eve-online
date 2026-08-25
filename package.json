@@ -1,12 +1,12 @@
 {
   "name": "@localisprimary/better-auth-eve-online",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "type": "module",
   "description": "A secure EVE Online SSO provider for Better Auth",
   "author": "Adam Trager <hello@adamtrager.com>",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/localisprimary/better-auth-eve-online.git"
+    "type": "git",
+    "url": "https://github.com/localisprimary/better-auth-eve-online.git"
   },
   "keywords": [
     "better-auth",
