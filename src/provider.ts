@@ -3,8 +3,9 @@ import type { GenericOAuthConfig } from "better-auth/plugins/generic-oauth";
 import {
   EVE_ONLINE_PROVIDER_ID,
   EVE_ONLINE_PROVIDER_NAME,
-  EVE_SSO_DISCOVERY_URL,
+  EVE_SSO_AUTHORIZATION_URL,
   EVE_SSO_ISSUER,
+  EVE_SSO_TOKEN_URL,
   type EvePortraitSize,
 } from "./constants";
 import {
@@ -87,7 +88,8 @@ export function eveOnline(
     name: EVE_ONLINE_PROVIDER_NAME,
     clientId: options.clientId,
     clientSecret: options.clientSecret,
-    discoveryUrl: EVE_SSO_DISCOVERY_URL,
+    authorizationUrl: EVE_SSO_AUTHORIZATION_URL,
+    tokenUrl: EVE_SSO_TOKEN_URL,
     tokenEndpointAuth: { method: "client_secret_basic" },
     accountIssuer: EVE_SSO_ISSUER,
     accountSubject: ({ profile }) => profile.sub as string,

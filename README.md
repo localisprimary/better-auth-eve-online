@@ -4,7 +4,6 @@ A small, secure [EVE Online SSO](https://developers.eveonline.com/docs/services/
 
 The provider:
 
-- discovers EVE's authorization and token endpoints from its OAuth metadata;
 - uses EVE's authorization-code flow with PKCE;
 - authenticates confidential token requests with `client_secret_basic`;
 - verifies EVE's signed JWT access token against the JWKS URL discovered from EVE's metadata endpoint;

@@ -2,7 +2,7 @@ import { webcrypto } from "node:crypto";
 
 import { betterAuth } from "better-auth";
 import { genericOAuth } from "better-auth/plugins";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   EVE_ONLINE_PROVIDER_ID,
@@ -16,10 +16,6 @@ import {
 const CLIENT_ID = "test-client-id";
 const KEY_ID = "test-key";
 const JWKS_URL = "https://login.eveonline.com/oauth/jwks";
-
-afterEach(() => {
-  vi.unstubAllGlobals();
-});
 
 function encodeBase64Url(value: Uint8Array | string): string {
   const bytes =
@@ -98,9 +94,8 @@ describe("eveOnline", () => {
     });
 
     expect(provider.providerId).toBe(EVE_ONLINE_PROVIDER_ID);
-    expect(provider.discoveryUrl).toBe(EVE_SSO_DISCOVERY_URL);
-    expect(provider.authorizationUrl).toBeUndefined();
-    expect(provider.tokenUrl).toBeUndefined();
+    expect(provider.authorizationUrl).toBe(EVE_SSO_AUTHORIZATION_URL);
+    expect(provider.tokenUrl).toBe(EVE_SSO_TOKEN_URL);
     expect(provider.tokenEndpointAuth).toEqual({
       method: "client_secret_basic",
     });
@@ -130,22 +125,6 @@ describe("eveOnline", () => {
   });
 
   it("registers as a Better Auth social provider", async () => {
-    const discoveryFetch = vi.fn<typeof fetch>((input) => {
-      const url = input instanceof Request ? input.url : input.toString();
-      if (url === EVE_SSO_DISCOVERY_URL) {
-        return Promise.resolve(
-          Response.json({
-            issuer: "https://login.eveonline.com",
-            authorization_endpoint: EVE_SSO_AUTHORIZATION_URL,
-            token_endpoint: EVE_SSO_TOKEN_URL,
-            jwks_uri: JWKS_URL,
-          }),
-        );
-      }
-      return Promise.resolve(new Response(null, { status: 404 }));
-    });
-    vi.stubGlobal("fetch", discoveryFetch);
-
     const auth = betterAuth({
       baseURL: "http://localhost:3000",
       secret: "fS6@yP9!wD2#nK7$xR4&cV8*zM5!hQ3@",
@@ -162,14 +141,6 @@ describe("eveOnline", () => {
         (provider) => provider.id === EVE_ONLINE_PROVIDER_ID,
       ),
     ).toBe(true);
-    const discoveryInput = discoveryFetch.mock.calls[0]?.[0];
-    const discoveryUrl =
-      discoveryInput instanceof Request
-        ? discoveryInput.url
-        : discoveryInput instanceof URL
-          ? discoveryInput.href
-          : discoveryInput;
-    expect(discoveryUrl).toBe(EVE_SSO_DISCOVERY_URL);
   });
 });
 
