@@ -153,4 +153,4 @@ Vite builds the ESM library, TypeScript emits declarations, Vitest exercises tok
 
 ## License
 
-MIT
+ISC

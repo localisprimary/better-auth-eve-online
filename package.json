@@ -38,7 +38,7 @@
     "oauth2",
     "sso"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "node": ">=20"
   },
