@@ -6,17 +6,17 @@
   "author": "Adam Trager <hello@adamtrager.com>",
   "repository": {
       "type": "git",
-      "url": "https://github.com/localisprimary/esi.git"
-    },
-    "keywords": [
-      "better-auth",
-      "eve-online",
-      "eve online",
-      "auth",
-      "oauth",
-      "oauth2",
-      "sso"
-    ],
+      "url": "https://github.com/localisprimary/better-auth-eve-online.git"
+  },
+  "keywords": [
+    "better-auth",
+    "eve-online",
+    "eve online",
+    "auth",
+    "oauth",
+    "oauth2",
+    "sso"
+  ],
   "license": "ISC",
   "sideEffects": false,
   "files": [
