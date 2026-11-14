@@ -4,7 +4,6 @@ import {
   EVE_ONLINE_PROVIDER_ID,
   EVE_ONLINE_PROVIDER_NAME,
   EVE_SSO_AUTHORIZATION_URL,
-  EVE_SSO_ISSUER,
   EVE_SSO_TOKEN_URL,
   type EvePortraitSize,
 } from "./constants";
@@ -91,7 +90,6 @@ export function eveOnline(
     authorizationUrl: EVE_SSO_AUTHORIZATION_URL,
     tokenUrl: EVE_SSO_TOKEN_URL,
     tokenEndpointAuth: { method: "client_secret_basic" },
-    accountIssuer: EVE_SSO_ISSUER,
     accountSubject: ({ profile }) => profile.sub as string,
     pkce: options.pkce ?? true,
     getUserInfo: async (tokens) => {

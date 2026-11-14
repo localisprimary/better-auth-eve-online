@@ -51,15 +51,16 @@
     "access": "public"
   },
   "peerDependencies": {
-    "better-auth": ">=1.7.0 <2"
+    "better-auth": ">=1.7.3 <2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.6",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "better-auth": "^1.7.23",
     "eslint": "^10.14.0",
     "prettier": "^3.10.1",
-    "typescript": "^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.72.2",
     "vite": "^8.3.8",
     "vitest": "^5.1.0"
